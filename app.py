@@ -18,11 +18,21 @@ def load_data(nrows):
 	data.dropna(subset=['LATITUDE','LONGITUDE'], inplace=True)
 	lowercase = lambda x: str(x).lower()
 	data.rename(lowercase, axis='columns', inplace=True)
-	data.rename(columns={'crash_data_crash_time':'date/time'}, inplace=True)
+	data.rename(columns={'crash_data_crash_time': 'date/time'}, inplace=True)
 	return data
 	
 	
-data = load_data(100000)
+data = load_data(10000)
 
-st.subheader('Raw Data ')
-st.write(data)
+
+
+
+
+
+
+
+
+
+if st.checkbox("Show Raw Data", False):
+	st.subheader('Raw Data')
+	st.write(data)
